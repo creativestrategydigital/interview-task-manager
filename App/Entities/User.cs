@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace TaskManager.App.Entities
 {
     [Table("users")]
-    [Index("email", IsUnique = true)]
+    [Index(nameof(User.Email), IsUnique = true)]
     public class User
     {
         public int Id { get; set; }
