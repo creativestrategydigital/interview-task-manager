@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KjpAykN5IfOlLZ0yYwlt0tRpMKe3uQ69xaTMHAZZWwywH9N/XFLvBcAHPIYTMlAzqtLfvG3SIkrPlzDQL4zw6Q==",
+  "dgSpecHash": "ZNZKBlTjJ5EmEEgerxk7NXHLQ+kRrdpeSo0Zw/4ly7kE8txWynoq4w8dV0VdxB/XYUj8Aa0/hgOeFFtDCs3D5Q==",
   "success": true,
   "projectFilePath": "/home/juvenal/Lab/CSD/Utils/Interviews/Backend/TaskManager/TaskManager.csproj",
   "expectedPackageFiles": [
+    "/home/juvenal/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/home/juvenal/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/juvenal/.nuget/packages/microsoft.data.sqlite.core/6.0.4/microsoft.data.sqlite.core.6.0.4.nupkg.sha512",
     "/home/juvenal/.nuget/packages/microsoft.entityframeworkcore/6.0.4/microsoft.entityframeworkcore.6.0.4.nupkg.sha512",

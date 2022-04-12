@@ -52,3 +52,4 @@
 /home/juvenal/Lab/CSD/Utils/Interviews/Backend/TaskManager/obj/Debug/net6.0/TaskManager.pdb
 /home/juvenal/Lab/CSD/Utils/Interviews/Backend/TaskManager/obj/Debug/net6.0/TaskManager.genruntimeconfig.cache
 /home/juvenal/Lab/CSD/Utils/Interviews/Backend/TaskManager/obj/Debug/net6.0/ref/TaskManager.dll
+/home/juvenal/Lab/CSD/Utils/Interviews/Backend/TaskManager/bin/Debug/net6.0/BCrypt.Net-Next.dll
