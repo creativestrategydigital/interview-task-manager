@@ -1,0 +1,77 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/juvenal/Lab/CSD/Utils/Interviews/Backend/TaskManager/task-manager.csproj": {}
+  },
+  "projects": {
+    "/home/juvenal/Lab/CSD/Utils/Interviews/Backend/TaskManager/task-manager.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/juvenal/Lab/CSD/Utils/Interviews/Backend/TaskManager/task-manager.csproj",
+        "projectName": "task-manager",
+        "projectPath": "/home/juvenal/Lab/CSD/Utils/Interviews/Backend/TaskManager/task-manager.csproj",
+        "packagesPath": "/home/juvenal/.nuget/packages/",
+        "outputPath": "/home/juvenal/Lab/CSD/Utils/Interviews/Backend/TaskManager/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/juvenal/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net60"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp6.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp6.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite.Core": {
+              "target": "Package",
+              "version": "[7.0.0-preview.2.22153.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.200/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
