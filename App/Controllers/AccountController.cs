@@ -14,16 +14,16 @@ namespace TaskManager.App.Controllers
         private readonly UserService _userService = new UserService();
 
         [HttpPost("register")]
-        public ActionResult Register([FromBody] RegisterUserDto request)
+        public ActionResult<HttpSuccessResponse> Register([FromBody] RegisterUserRequest request)
         {
             _userService.CreateNewUser(request);
             
-            return Ok(new { message = "User has been created successfully" });
+            return CreatedAtAction(nameof(Login), new HttpSuccessResponse{ Message = "User has been created successfully"});
         }
         
         
         [HttpPost("login")]
-        public ActionResult<dynamic> Login([FromBody] LoginUserDto request)
+        public ActionResult<UserDto> Login([FromBody] LoginUserRequest request)
         {
             UserDto userDto = _userService.Authenticate(request);
 
@@ -33,7 +33,7 @@ namespace TaskManager.App.Controllers
                 return BadRequest(new { errors = ModelState.ToJson() });
             }
 
-            return Ok(new { });
+            return Ok(userDto);
         }
     }
 }

@@ -5,7 +5,7 @@ using TaskManager.App.Validation;
 
 namespace TaskManager.App.Dto
 {
-    public class RegisterUserDto
+    public class RegisterUserRequest
     {
         [Required(ErrorMessage = "The name field is required")]
         [MinLength(2, ErrorMessage = "The length of the name should have at least 2 characters")]

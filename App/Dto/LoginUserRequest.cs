@@ -3,7 +3,7 @@ using TaskManager.App.Validation;
 
 namespace TaskManager.App.Dto
 {
-    public class LoginUserDto
+    public class LoginUserRequest
     {
         [Required]
         [EmailAddress]

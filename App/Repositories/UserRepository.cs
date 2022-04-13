@@ -12,7 +12,7 @@ namespace TaskManager.App.Repositories
             return _db.Users.FirstOrDefault(user => user.Email == email);
         }
         
-        public void SaveUser(User user)
+        public void Save(User user)
         {
             _db.Users.Add(user);
             _db.SaveChanges();

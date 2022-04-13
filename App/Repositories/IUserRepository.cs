@@ -6,6 +6,6 @@ namespace TaskManager.App.Repositories
     {
         public User? FindByEmail(string email);
 
-        public void SaveUser(User user);
+        public void Save(User user);
     }
 }

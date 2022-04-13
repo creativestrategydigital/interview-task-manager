@@ -17,9 +17,9 @@ namespace TaskManager.App.Services
             return ! (user is null);
         }
 
-        public User CreateNewUser(RegisterUserDto request)
+        public User CreateNewUser(RegisterUserRequest request)
         {
-            var user = new User
+            var newUser = new User
             {
                 Name = request.Name,
                 Email = request.Email,
@@ -27,16 +27,27 @@ namespace TaskManager.App.Services
                 ApiToken = Helpers.GenerateRandomString(50)
             };
             
-            _userRepository.SaveUser(user);
+            _userRepository.Save(newUser);
 
-            return user;
+            return newUser;
         }
 
-        public UserDto? Authenticate(LoginUserDto request)
+        public UserDto? Authenticate(LoginUserRequest request)
         {
-            return null;
+            User user = _userRepository.FindByEmail(request.Email);
             
-            return new UserDto();
+            if(! BCrypt.Net.BCrypt.Verify(request.Password, user.Password))
+            {
+                return null;
+            }
+            
+            return new UserDto
+            {
+                Id = user.Id,
+                Name = user.Name,
+                Email = user.Email,
+                ApiToken = user.ApiToken
+            };
         }
     }
 }
