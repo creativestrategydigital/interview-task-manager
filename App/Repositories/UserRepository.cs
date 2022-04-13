@@ -1,9 +1,9 @@
 using System.Linq;
 using TaskManager.App.Entities;
 
-namespace TaskManager.App
+namespace TaskManager.App.Repositories
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly AppDbContext _db = new AppDbContext();
 

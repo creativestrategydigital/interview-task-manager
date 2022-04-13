@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+using TaskManager.App.Repositories;
+using TaskManager.App.Services;
 using TaskManager.App.Validation;
 
 namespace TaskManager.App.Dto
