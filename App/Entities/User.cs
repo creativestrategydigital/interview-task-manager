@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 namespace TaskManager.App.Entities
 {
     [Table("users")]
-    [Index(nameof(User.Email), IsUnique = true)]
-    public class User
+    public class User : BaseEntity
     {
+        [Column("id")] 
         public int Id { get; set; }
         
         [Column("name", TypeName = "varchar(255)")]

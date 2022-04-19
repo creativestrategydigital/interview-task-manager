@@ -16295,7 +16295,7 @@
     ],
     "CSharpLanguageVersion": 1000
   },
-  "RootNamespace": "task_manager",
+  "RootNamespace": "TaskManager",
   "Documents": [],
   "SerializationFormat": "0.2"
 }

@@ -8,8 +8,7 @@ namespace TaskManager.App.Services
     public class UserService
     {
         private readonly UserRepository _userRepository = new UserRepository();
-        
-  
+
         public bool EmailExists(string email)
         {
             var user = _userRepository.FindByEmail(email); 
@@ -24,7 +23,8 @@ namespace TaskManager.App.Services
                 Name = request.Name,
                 Email = request.Email,
                 Password = BCrypt.Net.BCrypt.HashPassword(request.Password),
-                ApiToken = Helpers.GenerateRandomString(50)
+                ApiToken = Helpers.GenerateRandomString(50),
+                CreatedAt = DateTime.UtcNow
             };
             
             _userRepository.Save(newUser);

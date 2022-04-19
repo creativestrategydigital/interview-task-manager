@@ -9,7 +9,7 @@ namespace TaskManager.App
         {
             Dictionary<string, List<string>> errors = new Dictionary<string, List<string>>();
             
-            foreach (var keyValuePair in modelStateDictionary)
+            foreach (KeyValuePair<string, ModelStateEntry> keyValuePair in modelStateDictionary)
             {
                 List<string> errorMessages = new List<string>();
                 

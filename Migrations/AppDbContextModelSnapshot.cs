@@ -7,7 +7,7 @@ using TaskManager.App;
 
 #nullable disable
 
-namespace task_manager.Migrations
+namespace TaskManager.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -21,7 +21,8 @@ namespace task_manager.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("id");
 
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("TEXT");
@@ -29,6 +30,10 @@ namespace task_manager.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("text")
                         .HasColumnName("description");
+
+                    b.Property<bool?>("IsComplete")
+                        .HasColumnType("int")
+                        .HasColumnName("is_complete");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -41,8 +46,7 @@ namespace task_manager.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
                     b.ToTable("tasks");
                 });
@@ -51,7 +55,8 @@ namespace task_manager.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("id");
 
                     b.Property<string>("ApiToken")
                         .IsRequired()
@@ -77,9 +82,6 @@ namespace task_manager.Migrations
                         .HasColumnName("password");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Email")
-                        .IsUnique();
 
                     b.ToTable("users");
                 });

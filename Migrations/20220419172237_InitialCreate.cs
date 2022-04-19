@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace task_manager.Migrations
+namespace TaskManager.Migrations
 {
     public partial class InitialCreate : Migration
     {
@@ -13,7 +13,7 @@ namespace task_manager.Migrations
                 name: "users",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     name = table.Column<string>(type: "varchar(255)", nullable: false),
                     email = table.Column<string>(type: "varchar(255)", nullable: false),
@@ -23,42 +23,36 @@ namespace task_manager.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_users", x => x.Id);
+                    table.PrimaryKey("PK_users", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "tasks",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     title = table.Column<string>(type: "varchar(255)", nullable: false),
                     description = table.Column<string>(type: "text", nullable: true),
+                    is_complete = table.Column<bool>(type: "int", nullable: true),
                     userId = table.Column<int>(type: "INTEGER", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tasks", x => x.Id);
+                    table.PrimaryKey("PK_tasks", x => x.id);
                     table.ForeignKey(
                         name: "FK_tasks_users_userId",
                         column: x => x.userId,
                         principalTable: "users",
-                        principalColumn: "Id",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_tasks_userId",
                 table: "tasks",
-                column: "userId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_users_email",
-                table: "users",
-                column: "email",
-                unique: true);
+                column: "userId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
